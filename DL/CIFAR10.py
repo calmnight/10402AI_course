@@ -20,6 +20,8 @@ PIN_MEMORY = torch.cuda.is_available()
 
 # =========================
 # Data preprocessing
+# ToTensor: [0, 255] --> [0, 1]
+# Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)): standardization of [0, 1] with mean=0.5 and std=0.5
 # =========================
 transform = transforms.Compose([
     transforms.ToTensor(),
@@ -74,6 +76,8 @@ test_loader = DataLoader(
 # Fc1    : 8*8*64 -> 384
 # Fc2    : 384 -> 192
 # Fc3    : 192 -> 10
+
+# Initialize model, loss, optimizer
 # =========================
 class CIFAR10Net(nn.Module):
     def __init__(self):
@@ -102,11 +106,6 @@ class CIFAR10Net(nn.Module):
         x = self.features(x)
         x = self.classifier(x)
         return x
-
-
-# =========================
-# Initialize model, loss, optimizer
-# =========================
 
 
 # =========================
@@ -158,11 +157,6 @@ def evaluate(model, loader, device):
 
     accuracy = 100.0 * correct / total
     return accuracy
-
-
-# =========================
-# Lists for plotting
-# =========================
 
 
 # =========================
@@ -220,3 +214,4 @@ def main():
 if __name__ == '__main__':
     mp.freeze_support()
     main()
+
