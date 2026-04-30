@@ -1,1 +1,4 @@
 /DL/data
+/DL/yolov11/dataset
+/DL/yolov11/runs
+/DL/yolov11/*.pt
