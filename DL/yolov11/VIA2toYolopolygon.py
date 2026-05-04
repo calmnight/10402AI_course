@@ -90,8 +90,8 @@ def VIA2YOLO_mask(annotations_path, savefolder, imagepath):
 
 if __name__=='__main__':
     # annotations_path = "C:/Users/calmnight/python3/VIA2Yolov7/via_region_data.json"
-    annotations_path = "C:/Users/calmnight/python3/10402AI_course/DL/yolov11/dataset/balloon_dataset/segmentation/val.json"
-    savefolder = 'C:/Users/calmnight/python3/10402AI_course/DL/yolov11/dataset/balloon_dataset/segmentation/temp_annotation/'
-    imagepath = "C:/Users/calmnight/python3/10402AI_course/DL/yolov11/dataset/balloon_dataset/segmentation/val/"
+    annotations_path = "C:/Users/calmnight/python3/10402AI_course/DL/yolov11/dataset/segmentation/test.json"
+    savefolder = 'C:/Users/calmnight/python3/10402AI_course/DL/yolov11/dataset/segmentation/temp_annotation/'
+    imagepath = "C:/Users/calmnight/python3/10402AI_course/DL/yolov11/dataset/segmentation/balloon_dataset/test/"
     num_ids = VIA2YOLO_mask(annotations_path, savefolder, imagepath)
     
